@@ -1,2 +1,2 @@
 # todo
-todolist 연습
+todolist react study
