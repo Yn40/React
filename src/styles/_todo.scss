@@ -1,0 +1,27 @@
+.todo{
+  width: 80%;
+  min-width: 400px;
+  max-width: 900px;
+  height: 80%;
+  border-radius: 10px;
+  background: $white;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  //translateX translateY
+  .day{
+    font-size: 12px;
+  }
+  .total{
+    color:#0eb98a;
+    text-align: right;
+  }
+  header{
+    padding: 30px 40px 15px;
+    border-bottom: 1px solid #ededed;
+  }
+  .cont{
+    padding: 15px 40px 30px;
+  }
+}
