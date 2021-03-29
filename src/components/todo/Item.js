@@ -3,7 +3,7 @@ import {MdDone, MdDelete} from 'react-icons/md';
 
 const Item = ({done, text}) => {
   return (
-    <div className={'item ' + (done?"done":"")}> 
+    <div className={"item " + (done?"done":"")}> 
       <span className="bx_chk">
         <MdDone className="chk"/>
       </span>

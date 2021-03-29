@@ -1,10 +1,9 @@
 .todo{
-  @include set_content(80%, 80%);
+  @include set_content(80%, 80%, '', absolute);
   min-width: 400px;
   max-width: 900px;
   border-radius: 10px;
   background: $white;
-  position: absolute;
   top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -19,13 +18,18 @@
   }
   header{
     padding: 30px 40px 15px;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid #ededed; 
     font-size: 18px;
   }
   .cont{
     padding: 15px 40px 30px;
+    height: calc(100% - 137px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
   }
   .item{
+    padding: 10px 0;
     font-size: 16px;
     line-height: 30px;
     .bx_chk, .text, .btn_delete{
@@ -73,4 +77,57 @@
       }
     }
   }
-}
+  .create{
+    @include set_content(100%, 100px, block, absolute, #efefef);
+    left: 0;
+    bottom: 0;
+    padding: 20px 40px 30px;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    &.hide{
+      display: none;
+    }
+    .bx_ipt{
+      @include set_content(100%, 35px, null, relative);
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .ipt{
+      @include set_content(100%, 35px);
+      border: none;
+      font-size: 16px;
+      line-height: 35px;
+      padding: 0 50px 0 20px;
+      box-sizing: border-box;
+    }
+    .btn_com{
+      position:absolute;
+      top:0;
+      right: 0;
+      padding: 0 15px;
+      background: $point;
+      line-height: 40px;
+      color: $white;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 2;
+    }
+  }
+  .btn_add, .btn_cls{
+    @include set_content(60px, 60px, block, absolute);
+    color: $white;
+    border-radius: 50%;
+    font-size: 40px;
+    left: 50%;
+    bottom: -30px;
+    margin-left: -30px;
+    transition: all ease 100ms;
+  }
+  .btn_add{
+    background: $point;
+  }
+  .btn_cls{
+    background: #ff7f7f;
+    transform: rotate(45deg);
+  }
+} 
