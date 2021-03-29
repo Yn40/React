@@ -1,17 +1,15 @@
 import React from 'react';
 import Header from '../components/todo/Header.js';
 import Input from '../components/todo/Input.js';
-// import List from '../components/todo/List.js';
-import Item from '../components/todo/Item.js';
+import List from '../components/todo/List.js';
 
 const Todo = () => {
   return (
     <div className="todo">
         <Header/>
         <div className="cont">
-          <Item/> 
+        <List/>
         </div> 
-        {/* <List></List> */}
         <Input/>
     </div>
   );

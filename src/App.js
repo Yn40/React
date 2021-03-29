@@ -7,7 +7,7 @@ import Todo from './views/Todo.js';
 function App() {
   return (
     <div>
-      <Todo></Todo>
+      <Todo/>
     </div>
   );
 }
