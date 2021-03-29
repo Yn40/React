@@ -1,8 +1,7 @@
 .todo{
-  width: 80%;
+  @include set_content(80%, 80%);
   min-width: 400px;
   max-width: 900px;
-  height: 80%;
   border-radius: 10px;
   background: $white;
   position: absolute;
@@ -12,9 +11,10 @@
   //translateX translateY
   .day{
     font-size: 12px;
+    color: #888;
   }
   .total{
-    color:#0eb98a;
+    color:$point;
     text-align: right;
   }
   header{
@@ -23,5 +23,53 @@
   }
   .cont{
     padding: 15px 40px 30px;
+  }
+  .item{
+    font-size: 16px;
+    line-height: 30px;
+    .bx_chk, .text, .btn_delete{
+      display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+    }
+    .bx_chk{
+      @include set_content(30px, 30px);
+      border-radius: 50%;
+      border: 1px solid $gray; 
+      text-align: center;
+      color:$gray;
+      .chk{
+        @include set_content(20px, 20px, none);
+        vertical-align: middle;
+        margin-top: -5px;
+      }
+    }
+    .text{
+      padding: 0 30px;
+      box-sizing: border-box;
+      width: calc(100% - 55px); 
+    }
+    .btn_delete{
+      color:$gray;
+      @include set_content(20px, 20px,none);
+    }
+    &:hover{
+      .btn_delete{
+        display: block;
+      }
+    }
+    &.done{
+      .bx_chk{
+        color:$point;
+        border-color: $point; 
+        .chk{
+          display: inline-block;
+        }
+      }
+      .text{
+        text-decoration: line-through;
+        color:$gray;
+      }
+    }
   }
 }

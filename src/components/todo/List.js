@@ -1,6 +1,6 @@
 import React from 'react';
 
-const todolist = () => {
+const List = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const todolist = () => {
   );
 };
 
-export default todolist;
+export default List;

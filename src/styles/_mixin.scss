@@ -1,0 +1,39 @@
+@mixin bg($fileNm:null, $repeat:no-repeat, $bgPos:0 0, $bgSize:null, $bgColor:null){
+	background:$bgColor url($url + $fileNm + $version) $repeat $bgPos;
+	@if $bgSize != null {
+		background-size:$bgSize;
+	}
+}
+@mixin set_content($width:auto, $height:auto, $display:inline-block, $position:relative,  $color:null) {
+    content: "";
+    width: $width;
+    height: $height;
+    @if $display != null {
+      display: $display;
+    }
+    @if $position != null {
+      position: $position;
+    }
+    @if $color != null {
+        background: $color;
+    }
+}
+@mixin ellipsis($type:null,$num:2) {
+	overflow:hidden;
+	text-overflow:ellipsis;
+    @if $type == multi {
+        white-space: normal;
+        word-wrap: break-word;
+        display:-webkit-box;
+        -webkit-line-clamp:$num;
+        -webkit-box-orient:vertical;
+    }@else{
+        white-space:nowrap;
+    }
+}
+@mixin blind {
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -2000em;
+}
