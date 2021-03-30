@@ -8,18 +8,17 @@
   left: 50%;
   transform: translate(-50%,-50%);
   //translateX translateY
-  .day{
-    font-size: 12px;
-    color: #888;
-  }
-  .total{
-    color:$point;
-    text-align: right;
-  }
   header{
     padding: 30px 40px 15px;
+    font-size: 16px;
     border-bottom: 1px solid #ededed; 
-    font-size: 18px;
+  }
+  .day{
+    color: #888;
+  }
+  .cnt{
+    color:$point;
+    text-align: right;
   }
   .cont{
     padding: 15px 40px 30px;

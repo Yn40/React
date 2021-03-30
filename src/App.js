@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
-import './styles/style.scss';  
-import Todo from './views/Todo.js';
+import 'styles/style.scss';  
+import Todo from 'views/Todo.js';
 
 
 

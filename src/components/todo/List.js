@@ -1,14 +1,18 @@
 import React from 'react';
-import Item from '../todo/Item.js';
+import { useTodoState } from 'TodoContext.js';
+import Item from 'components/todo/Item.js';
 
 const List = () => {
+  const list = useTodoState();
+  console.log(list);
+
   return (
     <div className="cont">
-      <Item text="todo 만들꺼에요~☆★" done={true}/>
-      <Item text="인사하기" done={false}/>
-      <Item text="악수하기" done={true}/>
-      <Item text="발흔들기" done={false}/>
-      <Item text="출근하기" done={false}/>
+      {
+        list.map(todo=>(
+          <Item key = {todo.id} id = {todo.id} text = {todo.text} done={todo.done}/>
+        ))
+      }
     </div>
   );
 };
