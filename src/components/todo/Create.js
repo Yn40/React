@@ -20,11 +20,12 @@ const Create = () => {
     setOpen(!open);
   };
 
+  const onChange = e =>{setValue(e.target.value);}
+
   const onSubmit = e => {
     e.preventDefault();
     console.log("---submit----");
     console.log(value)
-    // setvalue(todoIpt.current.value);
     dispatch({
       type:"CREATE",
       todo:{
@@ -33,9 +34,8 @@ const Create = () => {
         done:false,
       }
     });
-    setvalue("");
+    setValue("");
   };
-  const onChange = e =>{setValue(e.target.value);}
 
   return (
     <>
