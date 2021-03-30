@@ -24,18 +24,19 @@ const Create = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log("---submit----");
     console.log(value)
     dispatch({
       type:"CREATE",
       todo:{
         id : nextId,
-        text:value,
-        done:false,
+        text : value,
+        done : false,
       }
     });
     setValue("");
+    setOpen(!open);
   };
+  
 
   return (
     <>

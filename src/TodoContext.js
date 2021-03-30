@@ -28,6 +28,7 @@ const initialTodos =[
 function todoReducer(state, action){
   //상태관리 - useReducer에서 사용
   // create, toggle, remove
+  console.log(action);
   switch(action.type){
     case 'CREATE':
       return state.concat(action.todo);
@@ -54,7 +55,7 @@ const TodoNextIdContext = createContext();
 
 export function TodoProvider({children}) {
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
-  const nextId = state.length+1;//useRef(5);
+  const nextId = state[state.length-1].id+1;//useRef(5);
 
   return (
     <TodoStateContext.Provider value ={state}>

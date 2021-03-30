@@ -39,9 +39,9 @@
     .bx_chk{
       @include set_content(30px, 30px);
       border-radius: 50%;
-      border: 1px solid $gray; 
+      border: 1px solid $point; 
       text-align: center;
-      color:$gray;
+      color:$point;
       .chk{
         @include set_content(20px, 20px, none);
         vertical-align: middle;
@@ -55,7 +55,10 @@
     }
     .btn_delete{
       color:$gray;
-      @include set_content(20px, 20px,none);
+      display: none;
+      svg{
+        @include set_content(20px, 20px);
+      }
     }
     &:hover{
       .btn_delete{
@@ -64,8 +67,8 @@
     }
     &.done{
       .bx_chk{
-        color:$point;
-        border-color: $point; 
+        color:$gray;
+        border-color: $gray; 
         .chk{
           display: inline-block;
         }

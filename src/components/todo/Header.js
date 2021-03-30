@@ -10,7 +10,7 @@ const Header = () => {
   };
   const state = useTodoState();
   let yet = 0;
-  state.map(todo => todo.done ? yet++ : yet);
+  state.map(todo => !todo.done ? yet++ : yet);
 
   return (
     <header>
