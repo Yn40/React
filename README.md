@@ -1,5 +1,6 @@
 # 💡 React Study 
-
+react 예제들을 만들어보며 공부 하기 위한 공간입니다.
+<br><br><br>
 ## 👀 React 개발을 위해 준비해야 할것
 - node 설치
 - yarm 설치 (npm을 사용해도 무방)
