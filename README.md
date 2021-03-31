@@ -4,7 +4,7 @@ react 예제들을 만들어보며 공부 하기 위한 공간입니다.
 ## 👀 React 개발을 위해 준비해야 할것
 - node 설치
 - yarm 설치 (npm을 사용해도 무방)
-- vscode, webstorm 선택하여 설치
+- vscode, webstorm 선택하여 설치 
 
 <br><br>
 ## 👀 create-react-app
