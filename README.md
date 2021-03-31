@@ -97,6 +97,15 @@ const setNumber = numberState[1];
 ### `filter()`
 요소를 걸러내어 배열로 true/false 반환, 없으면 빈 배열
 
+<br><br>
+## 👀 Drag & Drop
+---
+공식 : https://react-dnd.github.io/react-dnd/about
+### `설치`
+
+```
+  npm install react-dnd react-dnd-html5-backend
+```
 
 <br><br><br><br>
 

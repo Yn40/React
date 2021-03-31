@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import {MdDone, MdDelete} from 'react-icons/md';
 import { useTodoDispatch } from 'TodoContext';
 
 const Item = ({done, text, id}) => {
   const dispatch = useTodoDispatch();
+
   const onRemove = e => {
     // e.preventDefault(); 이벤트를 작동하지 못하게함
     e.stopPropagation(); //상위돔으로 이벤트 전달 안함
-    console.log("리리리리");
     dispatch({
       type:"REMOVE",
       id
     });
   };
 
-  const onToggle = e => {
+  const onToggle = e => { 
     dispatch({
       type:"TOGGLE",
       id

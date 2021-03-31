@@ -5,9 +5,11 @@ import Item from 'components/todo/Item.js';
 const List = () => {
   const list = useTodoState();
   console.log(list);
-
   return (
     <div className="cont">
+      {
+        list.length ==  0 ? <p className="nodate">등록된 할일이 없습니다</p> : ""
+      }
       {
         list.map(todo=>(
           <Item key = {todo.id} id = {todo.id} text = {todo.text} done={todo.done}/>
@@ -16,5 +18,5 @@ const List = () => {
     </div>
   );
 };
-
+ 
 export default List;
