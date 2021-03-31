@@ -1,17 +1,12 @@
-# 💡 React Study - TodoList
-
-todolist를 통해 curd를 작업해 볼 예정입니다.
-<br><br>
+# 💡 React Study 
 
 ## 👀 React 개발을 위해 준비해야 할것
----
 - node 설치
 - yarm 설치 (npm을 사용해도 무방)
 - vscode, webstorm 선택하여 설치
 
 <br><br>
 ## 👀 create-react-app
----
 페이스북에서 공식적으로 만든 react 기반의 프로젝트 개발환경을 구성해주는 모듈입니다.<br>
 react 웹 개발용 보일러플레이트(Boilerplate)이다.<br>
 es가 최신버전으로 설치되어 하위브라우저 지원이 안되는 경우가 있어  이 경우 babel을 통해 설정할수있습니다. 
@@ -31,7 +26,6 @@ create-react-app으로 설치하면 웹팩같은 설정 파일이 숨어있다.<
 
 <br><br>
 ## 👀 절대 경로 설정하기
----
 root 디렉토리에 jsconfig.json 생성 후 아래 코드를 입력해주고 vscode 재로드
 ```java
 {
@@ -49,7 +43,6 @@ import Header from 'components/todo/Header.js';
 
 <br><br>
 ## 👀 Context Api를 활용한 상태 관리
----
 - 만약 Context Api를 쓰지 않는다면, App 컴포먼트에서 뭐든걸 컨트롤 해야한다.<br>
 중간에 컴포먼트를 거치는 경우 중간에서 사용하지 않음에 불구하고 app에서 부터 가장 하위에 있는 컴포먼트까지 이벤트를 보내야한다는 문제가 있음. 
 
@@ -61,7 +54,6 @@ import Header from 'components/todo/Header.js';
 
 <br><br><br><br>
 ## 👀 props
----
 부모로 부터 객체로 값을 받아오고, 아래 처럼 기본값 세팅이 가능  <br>
 xxx.defaultProps={name:'기본'}; 
 ### `childern`
@@ -77,7 +69,6 @@ const Testcodo = ({childern}) => {...
 
 <br><br><br><br>
 ## 👀 메서드
----
 ### `useState()`
 hooks 중 하나로 컴포먼트에서 상태관리를 할수있다. 
 ```java
@@ -99,7 +90,6 @@ const setNumber = numberState[1];
 
 <br><br>
 ## 👀 Drag & Drop
----
 공식 : https://react-dnd.github.io/react-dnd/about
 ### `설치`
 
@@ -112,7 +102,6 @@ const setNumber = numberState[1];
 
 
 ## 📌 처음 듣는 개발 용어?
----
 ### `보일러플레이트`
 javaScript나 html에서의 보일러플레이트라고 하면 보통 크로스 브라우징과 호환성을 위한 Modernizr, polyfill, Normalize 등이 적용되어 있는 템플릿 같은 형태로 많이 사용된다.\
 반복되지만 자주쓰이는 형태를 자동화한다는 것이 핵심
