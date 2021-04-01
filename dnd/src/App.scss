@@ -1,0 +1,17 @@
+.cont{
+  width: 500px;
+  margin: 100px auto 0;
+}
+.item{
+  width: 100%;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #000;
+  cursor: grab;
+  &.mv{
+    opacity: 0.5;
+    background: #eee;
+    color: #999;
+    cursor: grab;
+  }
+}
