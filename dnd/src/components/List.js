@@ -1,42 +1,47 @@
 import React, { useState } from 'react';
-import Item from './Item';
+import Unit from './Unit.js';
+import update from 'immutability-helper';
 
-const initialItems =[
+const initialUnits =[
   {
     id : 1,
     text : "todo 만들꺼에요~☆★",
-    done : true,
   },
   {
     id : 2,
     text : "인사하기",
-    done : false,
   },
   {
     id : 3,
     text : "악수하기",
-    done : false,
   },
   {
     id : 4,
     text : "발흔들기",
-    done : true,
   },
 ];
 
 const List = () => {
-  const [items, setItems] = useState(initialItems);
-  const moveItem = () =>{
+  const [units, setUnits] = useState(initialUnits);
+  const moveItem = (dragIndex, hoverIndex) =>{
     //이동
-  };
+    console.log(dragIndex+" --이동!!!-- "+hoverIndex);
+    const DragUnit = units[dragIndex];
+    setUnits(update(units, {
+      $splice: [
+          [dragIndex, 1],
+          [hoverIndex, 0, DragUnit],
+      ],
+    }));
+  }
 
   return (
     <div className="cont">
-      <Item id="1" text="하하하하"/>
-      <Item id="2" text="오오오오"/>
-      <Item id="3" text="루루"/>
-      <Item id="4" text="ㅋㅋㅋㅋ"/>
-      <Item id="5" text="하하하무무"/>
+      {
+        units.map((unit, index) => (
+          <Unit key={unit.id} id={unit.id} index={index} text={unit.text} moveItem ={moveItem} />
+        ))
+      }
     </div>
   );
 };

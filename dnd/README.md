@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Drag &Drop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+공식 api - https://react-dnd.github.io/react-dnd/docs/api/use-drag <br>
+### `참고`
+- https://r4bb1t.tistory.com/26, https://codesandbox.io/s/wdi3q?file=/src/Card/styles.tsx
+- https://ichi.pro/ko/yeje-ui-react-dnd-226845595632541
+- https://codesandbox.io/s/misty-shape-2eov1?file=/src/Card.jsx:176-179
+- https://velog.io/@head/%EC%9D%B8%ED%84%B4-%ED%95%AD%ED%95%B4%EC%9D%BC%EC%A7%80-React-DND-8ck14zfgk0
+
+<br><br><br>
 
 ## Available Scripts
 
