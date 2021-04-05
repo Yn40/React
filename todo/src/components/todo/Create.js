@@ -24,7 +24,6 @@ const Create = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(value)
     dispatch({
       type:"CREATE",
       todo:{

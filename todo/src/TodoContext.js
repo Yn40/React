@@ -33,8 +33,14 @@ function todoReducer(state, action){
       return state.concat(action.todo);
     case 'TOGGLE':
       //전체 todo에서 엑션이 된 아이를 찾아서 반전 
+      console.log("토토토토");
       return state.map(
         todo => todo.id === action.id ? {...todo, done:!todo.done} : todo
+      );
+    case 'UPDATE':
+      console.log(action);
+      return state.map(
+        todo => todo.id === action.id ? {...todo, text:action.text} : todo
       );
     case 'REMOVE':
       //todo에서 이벤트가 일어난 아이 빼고 모두 가져오는것
@@ -50,6 +56,7 @@ function todoReducer(state, action){
 const TodoStateContext = createContext();
 const TodoDispatchContext =createContext();
 const TodoNextIdContext = createContext();
+const TodoOpenModiContext = createContext();
 // Context를 만들면 그 안에 provider 컴포먼트가 있다
 
 export function TodoProvider({children}) {
@@ -60,7 +67,7 @@ export function TodoProvider({children}) {
     <TodoStateContext.Provider value ={state}>
       <TodoDispatchContext.Provider value ={dispatch}>
         <TodoNextIdContext.Provider value ={nextId}>
-        {children}
+          {children}
         </TodoNextIdContext.Provider>
       </TodoDispatchContext.Provider>
     </TodoStateContext.Provider>
@@ -90,3 +97,4 @@ export function useTodoNextId(){
   }
   return context;
 }
+

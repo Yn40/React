@@ -1,9 +1,10 @@
 //common control
 html, body {
 	border: none;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.7;
 	color: $black;
+	font-family: $family;
 }
 html, body, div, ul, li, dl, dt, dd, ol, p, h1, h2, h3, h4, h5, h6, form, fieldset {
 	margin: 0;

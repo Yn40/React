@@ -4,7 +4,7 @@
 		background-size:$bgSize;
 	}
 }
-@mixin set_content($width:auto, $height:auto, $display:inline-block, $position:relative,  $color:null) {
+@mixin set_content($width:auto, $height:auto, $display:null, $position:null,  $color:null) {
     content: "";
     width: $width;
     height: $height;
