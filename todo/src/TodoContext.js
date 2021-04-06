@@ -1,5 +1,6 @@
 //contextApi 
 import React, {createContext, useContext, useReducer, useRef} from 'react';
+import update from 'immutability-helper';
 
 // const initialTodos =[];
 const initialTodos =[
@@ -33,7 +34,6 @@ function todoReducer(state, action){
       return state.concat(action.todo);
     case 'TOGGLE':
       //전체 todo에서 엑션이 된 아이를 찾아서 반전 
-      console.log("토토토토");
       return state.map(
         todo => todo.id === action.id ? {...todo, done:!todo.done} : todo
       );
@@ -42,6 +42,16 @@ function todoReducer(state, action){
       return state.map(
         todo => todo.id === action.id ? {...todo, text:action.text} : todo
       );
+    case 'SORT':
+      console.log(action);
+      //드래그앤 드랍 이동
+      const targetItem = state.filter(todo => todo.id === action.dragItem.id)[0];
+      return update(state, {
+        $splice:[
+          [action.dragItem.idx, 1],
+          [action.hoverItem.idx, 0, targetItem]
+        ]
+      });
     case 'REMOVE':
       //todo에서 이벤트가 일어난 아이 빼고 모두 가져오는것
       return state.filter(todo => todo.id !== action.id);

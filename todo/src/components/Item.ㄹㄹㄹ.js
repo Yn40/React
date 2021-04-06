@@ -35,11 +35,7 @@ const Item = ({done, text, id, idx, moveItem}) => {
         id : id,
       }
       if (dragItem.id !== hoverItem.id) {
-        dispatch({
-          type:"SORT",
-          dragItem,
-          hoverItem
-        });
+        moveItem(dragItem, hoverItem);
         todo.idx = hoverItem.idx; //index 값 변경 안해주면 프리뷰가 제대로 안보임
       }
     }
