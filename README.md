@@ -98,7 +98,15 @@ const setNumber = numberState[1];
 ### `설치`
 
 ```
-  npm install react-dnd react-dnd-html5-backend
+  npm install --save-dev react-dnd react-dnd-html5-backend
+```
+<br><br>
+## 👀 github 페이지 배포
+
+### `설치`
+
+```
+  npm install --save-dev gh-pages
 ```
 
 <br><br><br><br>
