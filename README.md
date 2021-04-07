@@ -1,5 +1,8 @@
 # 💡 React Study 
-react 예제들을 만들어보며 공부 하기 위한 공간입니다.
+react 예제들을 만들어보며 공부 하기 위한 공간입니다.<br>
+https://yn40.github.io/react/
+
+
 <br><br><br>
 ## 👀 React 개발을 위해 준비해야 할것
 - node 설치
@@ -104,10 +107,8 @@ const setNumber = numberState[1];
 ## 👀 github 페이지 배포
 
 ### `설치`
+참고 : https://www.hohyeonmoon.com/blog/react-js-github-pages-deploy/
 
-```
-  npm install --save-dev gh-pages
-```
 
 <br><br><br><br>
 

@@ -10,18 +10,18 @@ const initialTodos =[
   },
   {
     id : 2,
-    text : "인사하기",
-    done : false,
+    text : "할일을 입력해주세요!!!",
+    done : true,
   },
   {
     id : 3,
-    text : "악수하기",
+    text : "예시로 입력되어 있습니다",
     done : false,
   },
   {
     id : 4,
-    text : "발흔들기",
-    done : true,
+    text : "사용많이 해주세요!!! 광고 달래요^^",
+    done : false,
   },
 ];
 
@@ -42,7 +42,6 @@ function todoReducer(state, action){
         todo => todo.id === action.id ? {...todo, text:action.text} : todo
       );
     case 'SORT':
-      console.log("==========SORT============");
       //드래그앤 드랍 이동
       const targetItem = state.filter(todo => todo.id === action.dragItem.id)[0];
       return update(state, {
@@ -76,7 +75,7 @@ export function TodoProvider({children}) {
     if(maxId<todo.id) maxId = todo.id;
   });
   const nextId=maxId+1; 
-  
+
   return (
     <TodoStateContext.Provider value ={state}>
       <TodoDispatchContext.Provider value ={dispatch}>

@@ -4,7 +4,6 @@ import Item from 'components/todo/Item.js';
 
 const List = () => {
   const list = useTodoState();
-  console.log(list);
 
   return (
     <div className="cont">
