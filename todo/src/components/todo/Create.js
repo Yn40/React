@@ -24,6 +24,12 @@ const Create = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    let temp = value.trim();
+    if(temp === "" || temp === null){
+      alert("내용을 입력해주세요!!");
+      todoIpt.current.focus();
+      return;
+    }
     dispatch({
       type:"CREATE",
       todo:{
