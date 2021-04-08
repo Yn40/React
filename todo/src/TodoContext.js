@@ -1,7 +1,6 @@
 //contextApi 
-import React, {createContext, useContext, useReducer, useState,useEffect} from 'react';
+import React, {createContext, useContext, useReducer} from 'react';
 import update from 'immutability-helper';
-import axios from 'axios';
 
 
 const initialTodos =[
@@ -70,12 +69,6 @@ const TodoOpenModiContext = createContext();
 // Context를 만들면 그 안에 provider 컴포먼트가 있다
 
 export function TodoProvider({children}) {
-  const [loading, setLoading] = useState(false); 
-  
-  console.log("-=TodoProvider----");
-
-
-
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
   //nextId 구하기
   let maxId =0;
@@ -83,30 +76,6 @@ export function TodoProvider({children}) {
     if(maxId<todo.id) maxId = todo.id;
   });
   const nextId=maxId+1; 
-
-  useEffect(() => {
-    const FetchTodos = async () => {
-      try {
-        // 요청이 시작 할 때에는 error 와 users 를 초기화하고
-        setLoading(true);
-        const response = await axios.get(
-          'https://yn-project.herokuapp.com/todos'
-        );
-        // setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
-      } catch (e) {
-        throw new Error("can't find todoProvider");
-      }
-      setLoading(false);
-    };
-
-    FetchTodos();
-  }, []);
-
-  if(loading){
-    console.log("로딩중");
-  }else{
-    console.log("완료");
-  }
 
   return (
     <TodoStateContext.Provider value ={state}>
