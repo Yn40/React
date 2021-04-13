@@ -38,6 +38,7 @@
   "devDependencies": {
     "axios": "^0.21.1",
     "node-sass": "^5.0.0",
+    "react-async": "^10.0.1",
     "sass-loader": "^11.0.1"
   }
 }

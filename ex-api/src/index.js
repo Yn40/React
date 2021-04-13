@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'styles/style.scss';
 import reportWebVitals from './reportWebVitals';
+import { UsersProvider } from 'UsersContext';
 import Users from 'Users'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Users/>
+    <UsersProvider>
+      <Users/>
+    </UsersProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

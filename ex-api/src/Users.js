@@ -1,49 +1,44 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+// import {useAsync} from 'react-async';
+import {useUsersState, useUsersDispatch, getUsers} from 'UsersContext'
+import User from 'User';
 
-// const initial
+// async function getUsers(){
+//   const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+//   return response.data;
+// }
 
 const Users = () => {
-  const [users, setUsers] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null); 
-  const fetchUsers = async () =>{
-    try{
-      setUsers(null);
-      setError(null);
-      setLoading(true);
-      const response = await axios.get(
-        'https://jsonplaceholder.typicode.com/users'
-      );
-      console.log(response.data);
-      console.log(response.data[1].name);
-      setUsers(response.data);
-    }catch(e){
-      setError(e);
-    }
-    setLoading(false);
-  };
+  // const [state, refetch] = useAsync(getUsers, [], true);
+  //비구조 할당
+  // const {loading, data:users, error} = state;
+  //reload ===  refetch
+  // const {data:users, error, isLoading,  reload, run} = useAsync({
+  //   deferFn:getUsers 
+  // });
+  const [userId, setUserId] =useState(null);
+  const state = useUsersState();
+  const dispatch = useUsersDispatch();
+  const {data:users, loading, error} = state.users;
+  const fetchData = ()=>{
+    getUsers(dispatch);
+  }
 
-  useEffect(() => {
-    fetchUsers();  //useEffect사용해서, 컴포넌트가 처음 랜더링 될때 axios 호출을 실행한다
-  }, []);
-
-  console.log("loading : "+loading);
-  console.log("error "+error);
-  console.log("users "+users);
 
   if (loading) return <div className="loading">로딩중..</div>;
   if (error) return <div className="error">에러가 발생했습니다</div>;
-  if (!users) return <div className="nodata">데이터가 없습니다</div>;
+  if (!users) return <button onClick={fetchData} className="btn">불러오기</button>;
 
-  return (
+  return ( 
     <div>
       {users.map(user => ( 
-        <p key={user.id}>
-          {user.username} ({user.name}) - {user.email}
+        <p key={user.id} onClick={()=> setUserId(user.id)}>
+          {user.id} - {user.username} ({user.name}) - {user.email}
         </p>
       ))}
-      <button className="btn" onClick={fetchUsers}>다시 불러오기!</button>
+      <button className="btn" onClick={fetchData}>다시 불러오기!</button>
+      { userId && <User id={userId}/> }
     </div>
   );
   
