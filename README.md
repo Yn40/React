@@ -15,7 +15,7 @@ https://yn40.github.io/react/
 react 웹 개발용 보일러플레이트(Boilerplate)이다.<br>
 es가 최신버전으로 설치되어 하위브라우저 지원이 안되는 경우가 있어  이 경우 babel을 통해 설정할수있습니다. 
 <br>
-### `npm create-react-app 페키지명 or .`
+### `npx create-react-app 페키지명 or .`
 패키지명 대신 . 입력하면 현제 디렉토리에 설치 됩니다.<br>
 해당 명령어를 실행하면 최신 패키지가 설치 됩니다.<br>
 
